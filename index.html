@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui;
+  background: linear-gradient(180deg, #ffd6e8, #fff0f6);
+  overflow-x: hidden;
+  color: #5a0033;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: clamp(30px, 6vw, 42px);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 18px;
+  min-height: 26px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.progress {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  border: none;
+  border-radius: 16px;
+  background: #ff9ecf;
+  color: #000;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* 🌸 Falling petals */
+.petal {
+  position: fixed;
+  top: -10%;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  opacity: 0.7;
+  animation: fall linear infinite;
+  z-index: 1;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh) rotate(0deg); }
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Hello 🌸</h1>
+
+  <p class="subtitle" id="typeText"></p>
+
+  <p class="progress">Step 1 of 2</p>
+
+  <button onclick="goNext()">Continue</button>
+</div>
+
+<script>
+/* Typing effect */
+const text = "I made this small space for you, just to share something meaningful.";
+let i = 0;
+function type() {
+  if (i < text.length) {
+    document.getElementById("typeText").textContent += text[i++];
+    setTimeout(type, 40);
+  }
+}
+type();
+
+/* Page navigation */
+function goNext() {
+  window.location.href = "gallery.html";
+}
+
+/* Petals */
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.className = "petal";
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(petal);
+  setTimeout(() => petal.remove(), 10000);
+}
+setInterval(createPetal, 300);
+</script>
+
+</body>
+</html>

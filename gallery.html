@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: linear-gradient(180deg, #fff0f7, #ffd6ea);
+  color: #6b0033;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 20px;
+}
+
+/* 📸 Photo Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(255, 100, 180, 0.3);
+}
+
+/* 💖 Cards */
+.card {
+  background: rgba(255,255,255,0.85);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 120, 190, 0.25);
+  margin-bottom: 25px;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #c2185b;
+}
+
+.card p {
+  line-height: 1.7;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Why You’re Special 🌷</h1>
+
+  <!-- 📸 Multiple Photos -->
+  <div class="gallery">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+  </div>
+
+  <!-- 💖 Text -->
+  <div class="card">
+    <h2>What Makes You Different</h2>
+    <p>
+      You have a calm strength in the way you are.
+      You are the one whom i can talk without any worries. I can spend hours of time with you without feeling any bored. You are the one of the best thing that happen in my life. You are the friend whom i can relay on. 
+    </p>
+    <p>
+      You don’t need to change anything.
+      You already mean more than you realize.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Just So You Know</h2>
+    <p>
+      This page exists simply because some people deserve to be
+      appreciated quietly — and you are one of them.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
